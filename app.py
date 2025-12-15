@@ -1,8 +1,8 @@
 import pandas as pd
 import streamlit as st
 
-from chain import chain
-from system_prompt import system_prompt
+from bi_narrator.chain import chain
+from bi_narrator.system_prompt import system_prompt
 
 # Setting up the page title
 st.set_page_config(page_title="BI Narrator", layout="wide")

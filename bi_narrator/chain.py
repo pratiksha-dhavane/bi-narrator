@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 from typing import Optional, Dict, Any
 
-from config import MAX_OUTPUT_TOKENS, TEMPERATURE
+from bi_narrator.config import MAX_OUTPUT_TOKENS, TEMPERATURE
 
-from analytics_layer import run_analytics
-from format_prompt_layer import format_prompt_from_template
-from llm import call_llm_local
+from bi_narrator.analytics_layer import run_analytics
+from bi_narrator.format_prompt_layer import format_prompt_from_template
+from bi_narrator.llm import call_llm_local
 
 from langchain_core.runnables import RunnableLambda, RunnableParallel
 from functools import partial
