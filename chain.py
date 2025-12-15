@@ -2,10 +2,9 @@ import numpy as np
 import pandas as pd
 from typing import Optional, Dict, Any
 
-from config import max_tokens, temperature, n_threads, n_ctx
+from config import MAX_OUTPUT_TOKENS, TEMPERATURE
 
 from analytics_layer import run_analytics
-from system_prompt import system_prompt
 from format_prompt_layer import format_prompt_from_template
 from llm import call_llm_local
 
@@ -22,7 +21,7 @@ analytics_runnable = RunnableLambda(lambda ctx: run_analytics(
 
 format_prompt = RunnableLambda(format_prompt_from_template)
 
-call_llm = RunnableLambda(partial(call_llm_local, max_tokens=max_tokens, temperature=temperature, n_threads=n_threads, n_ctx=n_ctx))
+call_llm = RunnableLambda(partial(call_llm_local, max_tokens=MAX_OUTPUT_TOKENS, temperature=TEMPERATURE))
 
 chain = ( RunnableParallel({ "analytics_result" : analytics_runnable, 
                              "prompt_input" : (lambda x : x["prompt_input"])

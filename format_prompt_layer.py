@@ -72,7 +72,7 @@ def format_prompt_from_template(input : Dict[str, Any])-> str:
 
     max_period_txt = f"{max_period['period_end']} → {max_period['metric_sum']:.2f}" if max_period else "N/A"
     min_period_txt = f"{min_period['period_end']} → {min_period['metric_sum']:.2f}" if min_period else "N/A"
-
+    
     # Final output format
     return system_prompt.format(
         metric_name=meta["metric_col"],
