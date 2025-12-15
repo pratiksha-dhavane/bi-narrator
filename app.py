@@ -1,6 +1,10 @@
 import pandas as pd
 import streamlit as st
 
+import sys
+import os
+sys.path.append(os.path.dirname(__file__))
+
 from bi_narrator.chain import chain
 from bi_narrator.system_prompt import system_prompt
 
