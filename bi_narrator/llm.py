@@ -1,5 +1,5 @@
 import google.generativeai as genai
-from config import GEMINI_MODEL_NAME
+from bi_narrator.config import GEMINI_MODEL_NAME
 import os
 from dotenv import load_dotenv
 
